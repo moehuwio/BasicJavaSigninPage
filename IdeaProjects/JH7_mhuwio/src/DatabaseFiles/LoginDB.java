@@ -11,8 +11,10 @@ public class LoginDB
     {
         try
         {
+            // Connection myConn = DriverManager.getConnection("jdbc:mysql://russet.wccnet.edu/mhuwio", "mhuwio", "3XgYJ9RF2EUU");
+
             Class.forName("com.mysql.jdbc.Driver");
-            Connection myConn = DriverManager.getConnection("jdbc:mysql://russet.wccnet.edu/mhuwio", "mhuwio", "3XgYJ9RF2EUU");
+            Connection myConn = DriverManager.getConnection("jdbc:mysql:PutYourOwnHost", "UserName", "Password");
             System.out.println("connected");
 
             PreparedStatement st = myConn.prepareStatement(sql) ;
@@ -41,7 +43,7 @@ public class LoginDB
             String sqlQ = "INSERT INTO login (uname, pass) VALUE ('" + newUname + "','" + newPass + "')";
 
             Class.forName("com.mysql.jdbc.Driver");
-            Connection myConn = DriverManager.getConnection("jdbc:mysql://russet.wccnet.edu/mhuwio", "mhuwio", "3XgYJ9RF2EUU");
+            Connection myConn = DriverManager.getConnection("jdbc:mysql:PutYourOwnHost", "UserName", "Password");
             System.out.println("connected");
 
             PreparedStatement PS = myConn.prepareStatement(sqlQ);
@@ -62,7 +64,8 @@ public class LoginDB
             String SqlQ = "SELECT * FROM pickupLines";
 
             Class.forName("com.mysql.jdbc.Driver");
-            Connection myConn = DriverManager.getConnection("jdbc:mysql://russet.wccnet.edu/mhuwio", "mhuwio", "3XgYJ9RF2EUU");
+            Connection myConn = DriverManager.getConnection("jdbc:mysql:PutYourOwnHost", "UserName", "Password");
+
             System.out.println("connected");
             Statement stmt = myConn.createStatement();
 
